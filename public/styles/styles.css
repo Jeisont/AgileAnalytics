@@ -1,0 +1,71 @@
+/* Estilo para el encabezado (navbar) */
+nav {
+  background-image: url('/images/farmer-6959620_1280.jpg');
+  background-size: cover;  /* Ajusta la imagen para que cubra todo el espacio disponible */
+  background-position: center;  /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat;  /* No repite la imagen */
+  height: 370px;  /* Ajusta la altura del encabezado */
+  color: white;  /* Color del texto dentro del nav */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para el navbar */
+}
+
+/* Estilo para los elementos del navbar */
+.navbar-nav .nav-link {
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom 0.3s ease; /* Agrega transición suave para los cambios */
+  color: #fff6f6; /* Cambia el color del texto a blanco */
+  font-weight: 500;
+  font-size: 120%; /* Aumenta el tamaño de la letra en un 20% */
+}
+
+
+/* Efecto hover en los elementos del navbar */
+.navbar-nav .nav-link:hover {
+  color: #FFD700; /* Cambia el color del texto a dorado cuando se pasa el cursor */
+  background-color: rgba(0, 0, 0, 0.2); /* Fondo oscuro cuando se pasa el cursor */
+  border-bottom: 3px solid #FFD700; /* Línea dorada debajo del elemento cuando se pasa el cursor */
+}
+
+/* Estilo para el enlace activo */
+.navbar-nav .nav-link.active {
+  color: #00BFAE; /* Azul claro para resaltar el enlace activo */
+  font-weight: 700; /* Hacer el texto más fuerte cuando está activo */
+  border-bottom: 3px solid #00BFAE; /* Línea azul debajo del elemento activo */
+}
+
+/* Personalización del logo o nombre de la marca */
+.navbar-brand {
+  font-size: 2rem;  /* Tamaño grande para el logo o nombre */
+  color: white; /* Cambiar el color del texto a blanco */
+}
+
+/* Estilo para los botones de login y registro */
+.navbar .btn {
+  font-size: 1rem; /* Tamaño de letra en los botones */
+  font-weight: 500; /* Peso de la fuente */
+  border-radius: 0.375rem; /* Bordes redondeados */
+}
+
+/* Estilo del botón de iniciar sesión */
+.navbar .btn-light {
+  background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
+  color: #333; /* Color del texto */
+  transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.navbar .btn-light:hover {
+  background-color: #FFD700; /* Fondo dorado al pasar el mouse */
+  color: white; /* Cambiar texto a blanco al pasar el mouse */
+}
+
+/* Estilo del botón de registrarse */
+.navbar .btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.7); /* Borde blanco semitransparente */
+  color: white; /* Color del texto */
+  transition: color 0.3s ease, border-color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.navbar .btn-outline-light:hover {
+  background-color: #FFD700; /* Fondo dorado al pasar el mouse */
+  color: black; /* Cambiar texto a negro */
+  border-color: #FFD700; /* Borde dorado */
+}

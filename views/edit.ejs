@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--usamos boxicons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+       <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <% if (user) { %>
+        <div class="container mt-4">
+            <div class="card border-secondary">
+                <div class="card-header">Editar registro</div>
+                <div class="card-body">
+                    <form action="/update" method="POST">
+                        <!-- Campo para la cédula, que es el identificador único -->
+                        <input id="cedula" name="cedula" value="<%= user.cedula %>" hidden>
+    
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="<%= user.nombre %>" tabindex="1">
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="celular" class="form-label">Celular</label>
+                            <input type="text" class="form-control" id="celular" name="celular" value="<%= user.celular %>" tabindex="2">
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="correo_electronico" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo_electronico" name="correo_electronico" value="<%= user.correo_electronico %>" tabindex="3">
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="tipo_de_cultivo" class="form-label">Tipo de cultivo</label>
+                            <select name="tipo_de_cultivo" id="tipo_de_cultivo" class="form-select" tabindex="4">
+                                <option value="papa" <%= user.tipo_de_cultivo == 'papa' ? 'selected' : '' %>>Papa</option>
+                                <option value="tomate" <%= user.tipo_de_cultivo == 'tomate' ? 'selected' : '' %>>Tomate</option>
+                                <option value="alberja" <%= user.tipo_de_cultivo == 'alberja' ? 'selected' : '' %>>Alberja</option>
+                                <option value="zanahoria" <%= user.tipo_de_cultivo == 'zanahoria' ? 'selected' : '' %>>Zanahoria</option>
+                                <option value="arracacha" <%= user.tipo_de_cultivo == 'arracacha' ? 'selected' : '' %>>Arracacha</option>
+                                <option value="cafe" <%= user.tipo_de_cultivo == 'cafe' ? 'selected' : '' %>>Café</option>
+                            </select>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="fecha_de_siembra" class="form-label">Fecha de siembra</label>
+                            <input type="date" class="form-control" id="fecha_de_siembra" name="fecha_de_siembra" value="<%= user.fecha_de_siembra %>" tabindex="5">
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="area_sembrada" class="form-label">Área sembrada</label>
+                            <input type="number" class="form-control" id="area_sembrada" name="area_sembrada" value="<%= user.area_sembrada %>" tabindex="6" placeholder="Ingrese el número de hectáreas">
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="nombre_finca" class="form-label">Nombre de la finca</label>
+                            <input type="text" class="form-control" id="nombre_finca" name="nombre_de_finca" value="<%= user.nombre_de_finca %>" tabindex="7">
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="municipio" class="form-label">Municipio</label>
+                            <select name="municipio" id="municipio" class="form-select" tabindex="8">
+                                <option value="ipiales" <%= user.municipio == 'ipiales' ? 'selected' : '' %>>Ipiales</option>
+                                <option value="pupiales" <%= user.municipio == 'pupiales' ? 'selected' : '' %>>Pupiales</option>
+                                <option value="tuquerres" <%= user.municipio == 'tuquerres' ? 'selected' : '' %>>Tuquerres</option>
+                                <option value="iles" <%= user.municipio == 'iles' ? 'selected' : '' %>>Iles</option>
+                                <option value="pasto" <%= user.municipio == 'pasto' ? 'selected' : '' %>>Pasto</option>
+                                <option value="contadero" <%= user.municipio == 'contadero' ? 'selected' : '' %>>Contadero</option>
+                            </select>
+                        </div>
+    
+                        <button type="submit" class="btn btn-primary" tabindex="9">Guardar</button>
+                        <a href="/" class="btn btn-secondary">Cancelar</a>
+                    </form>
+                </div>
+            </div>       
+        </div>
+    <% } %>
+    
+        
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  </body>
+</html>
